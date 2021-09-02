@@ -18,3 +18,7 @@ build:
 	sdk/cmdline-tools/bin/sdkmanager --install "build-tools;31.0.0" --sdk_root=${PWD}/sdk
 run:
 	sdk/emulator/emulator -avd android-31 -ranchu -port 8888
+perf:
+	sudo perf record -e intel_pt//u ls
+perf_ana:
+	sudo perf script --insn-trace
